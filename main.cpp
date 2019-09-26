@@ -10,7 +10,7 @@ int main(){
 
     //values being passed in are 
     test.initialize("John", "Doe", 1010, 2, 2, 1, 20, 40, 40);
-    test2.initialize("Jane", "Doe", 1011, 2, 2, 1, 20, 40, 40);
+    //test2.initialize("Jane", "Doe", 1011, 2, 2, 1, 20, 40, 40);
     test.addAllValue();
 
     //outputs student name, id and current grade

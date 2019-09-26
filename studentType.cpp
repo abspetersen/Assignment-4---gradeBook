@@ -3,15 +3,20 @@
 
 using namespace std;
 
+//constructor
 student::student(){
-    //initialize all values as 0s
-    for(int i = 0; i < prog_Limit; i++)     { progAssignments[i]       = 0;}
-    for(int i = 0; i < tests_Limit; i++)    { tests[i]                 = 0;}
-    for(int i = 0; i < final_Limit; i++)    { finals[i]                = 0;}
+    //initialize all values as non empty
+    fName           = "";
+    lName           = "";
+    studentId       = 0 ;
+    postedGrade     = 0 ;
+    letterGrade     = 'f';
+    for(int i = 0; i < prog_Limit ; i++){progAssignments[i]= 0;}
+    for(int i = 0; i < tests_Limit; i++){tests[i]          = 0;}
+    for(int i = 0; i < final_Limit; i++){finals[i]         = 0;}
 };
 
 //relationType used for sort according to studentID
-//enum student::RelationType  {LESS, GREATER, EQUAL};
 RelationType student::compareId(student otherStudent) const{
     if (studentId < otherStudent.studentId)
         return LESS;
@@ -20,8 +25,8 @@ RelationType student::compareId(student otherStudent) const{
     else return EQUAL;
 };
 
-//Student is initialized here with appropriate values
-void student::initialize(   string nameF, string nameL, int Id,
+//Student is initialized here with values that are passed in
+void student::initialize(string nameF, string nameL, int Id,
                             int numPrograms, int numTests, int numFinals,
                             double progWeight, double testWeight, double finalWeight
                         ){
@@ -96,7 +101,6 @@ void student::addProgAssignments(){
 void student::addTests(){
     //clears console
     system("CLS");
-
     if(tests_Limit <= 0 || tests_Limit > 4){
         //input was an unacceptable value, 
         //implement an error check before passing values on to student
