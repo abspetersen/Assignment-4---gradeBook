@@ -1,4 +1,4 @@
-# Assignment-4---gradeBook
+# gradeBook program in C++
 
 //input:
     grades.dat
